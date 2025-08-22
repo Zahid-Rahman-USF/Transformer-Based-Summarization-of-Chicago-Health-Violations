@@ -1,0 +1,34 @@
+Create a virtual environment (optional but recommended)
+bashCopyEditpython -m venv env source env/bin/activate     # macOS/Linux env\\Scripts\\activate      # Windows 
+Install required packages
+Run this from the project folder where requirements.txt is:
+bashCopyEditpip install -r requirements.txt
+Check the model folder is present
+Make sure the flan_t5_small_plain_lora folder is in the project root
+(It should contain adapter_model.safetensors, tokenizer.json, etc.)
+Start the Flask server
+bashCopyEditpython app.py
+If all goes well, you’ll see:
+csharpCopyEdit* Running on http://127.0.0.1:5000/ 
+Open Postman and import your collection
+Open Postman
+Click Import > File > Choose your .json file
+Three requests should show up:
+Summarize Custom Violation
+Fetch and Summarize Violations
+Search and Summarize Violations
+Use Search and Summarize
+That’s the main one for the project.
+Choose POST
+Set body to:
+jsonCopyEdit{"query": "Tijuana Flats 4050 East Fowler" } 
+or something like:
+jsonCopyEdit{"query": "The Dearborn" } 
+Click Send
+You’ll see structured JSON output with summaries (if model works).
+⚠️ Quick Notes
+This API is not hosted online. It runs locally at 127.0.0.1:5000.
+If you see errors, check:
+Missing flan_t5_small_plain_lora model folder
+Misspelled imports
+Outdated Python version

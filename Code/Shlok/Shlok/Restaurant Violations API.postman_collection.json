@@ -1,0 +1,94 @@
+{
+	"info": {
+		"_postman_id": "8f15b531-380a-4ff9-9b42-ce6ff02ca50e",
+		"name": "Restaurant Violations API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "23664406"
+	},
+	"item": [
+		{
+			"name": "Summarize Custom Violation",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"text\": \"Rodent droppings found in food preparation area.\"\n}"
+				},
+				"url": {
+					"raw": "http://127.0.0.1:5000/summarize_violation",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						"summarize_violation"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Fetch and Summarize Violations",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:5000/fetch_and_summarize",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						"fetch_and_summarize"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Search and Summarize Violations",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"query\": \"The Dearborn\"\n}"
+				},
+				"url": {
+					"raw": "http://127.0.0.1:5000/search_and_summarize",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						"search_and_summarize"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
